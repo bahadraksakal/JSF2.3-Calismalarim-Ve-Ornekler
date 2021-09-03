@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Param_UIComposition_1</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="Param_UIComposition_0.xhtml"> 
+            <!-- Param_UIComposition_0 dakileri komple bu sayfaya aktardık -->
+
+            <ui:define name="orta"> <!-- orta kisim override edildi -->
+                <h2 class="kirmizi">sayfa2.xhtml ORTA KISIM</h2>
+
+                <h:graphicImage height="250" width="420" 
+                                value="resources/images/JSF_Kitabi.jpg" />
+
+                <h:outputStylesheet library="css" name="style.css" />
+                <div class="yesil">Bahadır</div>
+                <div class="yesil">Aksakal</div>
+                <div class="yesil">JSF öğreniyor</div>
+
+            </ui:define>
+
+            <ui:define name="alt"> <!-- alt kisim override ettik -->
+                <h2 class="kirmizi">sayfa2.xhtml ALT KISIM</h2>
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+
