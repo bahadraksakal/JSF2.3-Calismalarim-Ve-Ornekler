@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JSF_fConvertDataTime_0</title>
+    </h:head>
+    <h:body>
+        <h2>Girilen verinin tarihe dönüştürülmesi 
+            <hr/>
+            f:convertDateTime</h2>
+
+        <h:form>
+
+            <h:panelGrid columns="3">
+
+                Doğum Tarihi : 
+                <h:inputText id="dogumtarihi" value="#{yb.dogumtarihi}" 
+                             size="20" required="true"
+                             label="Boş geçmeyiniz. Geçerli bir tarih giriniz.">
+
+                    <f:convertDateTime pattern="dd/MM/yyyy" /> <!-- harflerin büyük küçük olması önemli -->
+                    <!-- çıktı alırkende  tamamen aynı yapıyı kullanmalıyız d yerine D yazarsak bozulur -->
+                    <!-- yada M yerine m  ile  istersek bozulur ve default değerini alırız -->
+                </h:inputText>
+
+                <h:commandButton value="Gönder" action="JSF_fConvertDataTime_1" />
+
+            </h:panelGrid>
+            <h:message for="dogumtarihi" style="color:crimson" />  
+
+        </h:form>       
+    </h:body>
+</html>
+
