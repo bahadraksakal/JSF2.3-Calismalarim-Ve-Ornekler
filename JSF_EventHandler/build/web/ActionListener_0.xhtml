@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>ActionListener_0</title>
+    </h:head>
+    <h:body>
+        <h2>f:actionListener</h2>
+            
+        <h:form>
+            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Adı Soyadı : " />
+                <h:inputText value="#{yb.adiSoyadi}" />
+
+                <h:commandButton value="Gönder1" action="ActionListener_1" /> 
+                    
+                <h:commandButton value="Gönder2" action="ActionListener_2" type="submit" >
+                    <f:actionListener type="com.eventhandler.YonetimliBeanActionListener"/>
+                </h:commandButton>  
+                
+                
+                    
+            </h:panelGrid>
+        </h:form>   
+    </h:body>
+</html>
+

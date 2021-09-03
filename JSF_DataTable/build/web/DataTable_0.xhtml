@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>DataTable_0</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:outputStylesheet id="styleSheet_0" library="css" name="table-style.css"/>
+            <h:outputStylesheet id="styleSheet_1" library="css" name="style.css"/>
+            
+            
+            <h:form id="form3">
+                <h:panelGrid columns="1" border="0" styleClass="mavi">
+                    <h:outputLabel for="inputadiSoyadi" value="Adı-Soyadı: "/>
+                    <h:inputText id="inputadiSoyadi" value="#{personel.adiSoyadi}" required="true" >
+                        <f:validateLength for="inputadiSoyadi" minimum="2" maximum="100"/>
+                    </h:inputText>
+                    <h:message for="inputadiSoyadi" style="color: red"/>
+                    
+                    <h:outputLabel for="inputMaasi" value="Maaşı: "/>
+                        <h:inputText id="inputMaasi" value="#{personel.maasi}" required="true">
+                            <f:convertNumber/> <!-- sadece numara girilebilir -->
+                            <!-- çok büyük girerse int patlar -->
+                        </h:inputText>
+                    <h:message for="inputMaasi" style="color: red"/>
+                    
+                    <h:outputLabel for="inputNumarasi" value="Numarası: "/>
+                    <h:inputText id="inputNumarasi" value="#{personel.numarasi}" required="true">
+                        <f:validateLength for="inputNumarasi" minimum="3" maximum="9"/>
+                    </h:inputText>
+                    <h:message for="inputNumarasi" style="color: red"/>
+                    
+                    <h:outputLabel for="inputYasi" value="Yaşı: "/>
+                    <h:inputText id="inputYasi" value="#{personel.yasi}" required="true">
+                        <f:validateLongRange for="inputYasi" minimum="15" maximum="110"/>
+                    </h:inputText>
+                    <h:message for="inputYasi" style="color: red"/>
+                    
+                    <h:commandButton id="cmb_1" value="ekle" type="submit" action="#{personel.addPersoneller()}"/>
+                </h:panelGrid>
+
+            </h:form>
+            <h:form id="form2">
+                <!-- value list veri tipi verdik -->
+                <h:dataTable id="datatable_00" value="#{personel.personeller}" var="p" 
+                             border="2"                             
+                             styleClass="personel-tablo" 
+                             headerClass="personel-tablo-baslik"
+                             rowClasses="personel-tablo-tek-satir,personel-tablo-cift-satir"> 
+                    
+                    <h:column id="cln_0">
+                        <h:graphicImage library="images" name="ok_isareti.png" />
+                        <f:facet name="header">NUMARASI</f:facet><!--kolon başlığı-->
+                        <!-- facet kısmı bi kere render edilir -->
+                        <!-- columun içi dynamictir -->                       
+                        <!--satır kayıdı--> <!-- var atama p  deki p -->
+                        <h:inputText value="#{p.numarasi}" size="10" rendered="#{p.duzenle}" />
+                        <h:outputText value="#{p.numarasi}" rendered="#{not p.duzenle}" /> 
+                        <!-- 'not'  kelimesi  - ile çarpmak gibidir. -->
+                    </h:column>
+
+                    <h:column id="cln_1">
+                        <f:facet name="header" >
+                            <h:commandLink value="ADI SOYADI" action="#{personel.siralaPersonelAdiSoyadi()}"/>   
+                            <!-- çok fazla iç içe tag olduğudan direk personelden eriştik diğeri hata verdi -->
+                            <!-- muhtemelen facet bir kere render edildiği için liste üzerinden gidemiyoruz personel üzerinden gitmek lazım -->
+                        </f:facet><!--kolon başlığı-->                        
+                        <!--satır kayıdı-->
+                        <h:inputText value="#{p.adiSoyadi}" size="15" rendered="#{p.duzenle}" />
+                        <h:outputText value="#{p.adiSoyadi}" rendered="#{not p.duzenle}" />
+                    </h:column>
+
+                    <h:column id="cln_2">
+                        <f:facet name="header">YAŞI</f:facet><!--kolon başlığı-->                        
+                        <h:inputText value="#{p.yasi}" size="5" rendered="#{p.duzenle}" />
+                        <h:outputText value="#{p.yasi}" rendered="#{not p.duzenle}" />
+                        <!--satır kayıdı-->
+                    </h:column>
+
+                    <h:column id="cln_3">
+                        <h:graphicImage library="images" name="para.png" />
+                        <f:facet name="header" class="personel_tablo_baslik" >
+                            <h:commandLink value="MAAŞI" action="#{personel.siralaPersonelMaasi()}"/>
+                            <!-- çok fazla iç içe tag olduğudan direk personelden eriştik diğeri hata verdi -->
+                            <!-- muhtemelen facet bir kere render edildiği için liste üzerinden gidemiyoruz personel üzerinden gitmek lazım -->
+                        </f:facet>
+                        <!--kolon başlığı-->                      
+                        <!--satır kayıdı-->
+                        <h:inputText value="#{p.maasi}" size="5" rendered="#{p.duzenle}" />
+                        <h:outputText value="#{p.maasi}" rendered="#{not p.duzenle}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">
+                            <h:graphicImage library="images" name="sil_liste.png" />
+                            <br/><div class="kirmizi">SİL</div>
+                        </f:facet>
+                       <h:graphicImage library="images" name="sil.png" /><br/>
+                       <h:commandLink value="Sil" action="#{p.deletePersoneller()}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                           <h:graphicImage library="images" name="duzenle_ust.png"/>
+                           <br/><div class="kirmizi">DÜZENLE</div>
+                        </f:facet>
+
+                        <h:graphicImage library="images" name="duzenle.png" 
+                                        rendered="#{not p.duzenle}" />
+                        <h:commandLink value="Düzenle" 
+                                       action="#{p.personelduzenle()}" 
+                                       rendered="#{not p.duzenle}" />
+
+
+                        <h:graphicImage library="images" name="onay.png" 
+                                        rendered="#{p.duzenle}" /><br/>
+                        <h:commandButton value="Değişikleri Kaydet" 
+                                         action="#{p.personelkaydet()}"
+                                         rendered="#{p.duzenle}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
