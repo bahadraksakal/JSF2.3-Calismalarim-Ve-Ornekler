@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>YonetimliBean_1</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form id="form2">
+                <h3>Yonetimli Bean 1 : Action Event</h3>
+                <h:panelGrid id="plg_0" border="0" columns="1" >
+                    <f:facet name="header"><h:outputText value="Kullanıcı Girişi"/></f:facet>
+                        <h:outputLabel id="olbl_2" for="texfield_ad2" value="Ad : "/>
+                        <h:inputText id="itf_ad2" value="#{yonetimliJavaBean.ad}"/> <!-- ID den eventi çekicez -->
+                        <h:outputLabel id="olbl_3" for="texfield_soyad2" value="Soyad: "/>
+                        <h:inputText id="itf_soyad2" value="#{yonetimliJavaBean.soyad}"/>
+                        <!-- onceki bean0 gibi -->
+                        
+                        <h:commandButton id="cmb_0" value="Onay" actionListener="#{yonetimliJavaBean1.onayVerActionListener}">
+                            <f:attribute name="textfield_ad2" value="#{yonetimliJavaBean.ad}"/> <!-- yukarda set ettiğimiz adı get eder -->
+                            <f:attribute name="textfield_soyad2" value="#{yonetimliJavaBean.soyad}"/>
+                        </h:commandButton>
+                        <!-- Actionevent kullanmak için buton listenere bağlanır  
+                        actionevent referansı içeren bir metot listenre adres olarak verilir
+                        jsf core den attiribute yardımıyla nesneleri bean1 class ımza başarıyla
+                        aktarmış oluruz.-->
+                        <f:facet name="footer"> <h:outputText value="#{yonetimliJavaBean1.sonuc}"/> </f:facet> 
+                        <!-- comment -->
+                    
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

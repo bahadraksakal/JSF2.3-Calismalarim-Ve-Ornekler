@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>YonetimliBean_2</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form id="form3">
+                <h:panelGrid id="plg_1" columns="1">
+                    <h:outputLabel id="olbl_4" value="İsim: " for="itf_0"/>
+                    <h:inputText id="itf_0" value="#{yonetimliJavaBean2.isim}"/>
+                    <h:outputLabel id="olbl_5" value="Yaş: " for="itf_1"/>
+                    <h:inputText id="itf_1" value="#{yonetimliJavaBean2.yas}"/>
+                    
+                    <h:outputText value="Deneyimler"/>
+                    <h:selectManyCheckbox id="smc_0" layout="pageDirection" value="#{yonetimliJavaBean2.deneyim}">
+                        <f:selectItem itemValue="Jsf" itemLabel="Java Server Faces"/>
+                        <f:selectItem itemValue="Spring" itemLabel="Spring"/>
+                        <f:selectItem itemValue="Java" itemLabel="Java EE"/>
+                        <f:selectItem itemValue="pyhton" itemLabel="pyhton"/>
+                        <f:selectItem itemValue="hibernate" itemLabel="hibernate"/>
+                    </h:selectManyCheckbox>
+                    <!-- manycheckbox bir string listesi oluşturur ve onu döndürür -->
+                    <h:commandButton id="cmb_1" value="Gönder" action="YonetimliBean_2.xhtml"/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h:commandButton id="cmb_2" value="temizle" type="reset" />
+                    <h:panelGrid id="plg_2" columns="2">
+                        <f:facet name="header"> <h:outputText id="opt_1" value="Girilen Bilgiler"/> </f:facet>                        
+                        <h:outputLabel id="olbl_6" value="İsmin: " for="opt_2"/>
+                        <h:outputText id="opt_2" value="#{yonetimliJavaBean2.isim}"/>
+                        <h:outputLabel id="olbl_7" value="Yaş: " for="opt_3"/>
+                        <h:outputText id="opt_3" value="#{yonetimliJavaBean2.yas}"/>
+                        <h:outputLabel id="olbl_8" value="Deneyim: " for="opt_4"/>
+                        <h:outputText id="opt_4" value="#{yonetimliJavaBean2.deneyim}"/>
+                    </h:panelGrid>                                     
+                </h:panelGrid>
+                <h:outputText id="opt_5" value="#{yonetimliJavaBean2.ekranaBas()}"/> <!-- eğer () koyamazssam textler için hata vericektir çünkü fonksiyonlar action actionlist vb.. de kullanılır -->
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

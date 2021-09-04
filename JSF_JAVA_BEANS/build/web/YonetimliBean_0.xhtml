@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      >
+    <h:head>
+        <title>Yonetimli Java Bean</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h3>Managed Bean : Yonetimli Kahve Çekirdeği</h3>
+            <h:form id="form1">
+                <h:outputLabel id="opl_0" for="beanInput_0" value="Bean Ad: "/>
+                <h:inputText id="beanInput_0" value="#{yonetimliJavaBean.ad}">
+                    <f:validateBean/>
+                </h:inputText>
+                <br/>
+                <h:outputLabel id="opl_1" for="beanInput_1" value="Bean Soyad:"/>
+                <h:inputText id="beanInput_1" value="#{yonetimliJavaBean.soyad}"/>
+                    
+                <h:commandButton id="submit_buton_0" value="submit" action="#{yonetimliJavaBean.yazdir()}"/> <!-- metotlar actionların içinde kullanılabilir. normal input outputlarda hataaldırır -->
+                <hr/>
+                <h:outputText id="out_text_0" value="#{yonetimliJavaBean.ad} #{yonetimliJavaBean.soyad}"/>
+                <h:outputText id="out_text_1" value="#{yonetimliJavaBean.yazdir}"/>
+                <!-- faces-config xml eklendiği zaman beanler oto tanımlamaları bozulur ve elle  manuel eklemke gerekir -->
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
