@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Giriş Başarısız</title>
+    </h:head>
+    <h:body>
+        <f:view>             
+            <h:form>
+                
+                <h:outputStylesheet library="css" name="style.css" />
+                <h:graphicImage library="images"  name="uyari.png" />
+                <h:outputText styleClass="hata_mesaj" 
+                value="KULLANCI ADI VEYA DA PAROLA HATALI GİRİLDİ!"/>
+
+                <h:panelGrid columns="3">
+
+                        <h:outputText value="Kullanıcı Adı : "></h:outputText>  
+                        <h:inputText id="uyekullaniciadiID" 
+                                                 value="#{uyegirisbean.uyekullaniciadi}" 
+                                                 label="KULLANICI ADI ALANINI BOŞ GEÇEMEZSİNİZ!" 
+                                                 size="30" required="true" 
+                                                 styleClass="input_text" />
+                        <h:message for="uyekullaniciadiID" styleClass="hata_mesaj"/>
+
+                        <h:outputText value="Parola : "> </h:outputText>  
+                        <h:inputSecret id="uyeparolaID" 
+                                                   value="#{uyegirisbean.uyeparola}"  
+                                                   label="PAROLA ALANINI BOŞ GEÇEMEZSİNİZ!"
+                                                   size="30" required="true" 
+                                                   styleClass="input_text" />
+                        <h:message for="uyeparolaID" styleClass="hata_mesaj"/>
+
+                        <h:inputHidden></h:inputHidden> 
+                        <h:commandButton value="Giriş Yap" type="submit" 
+                                         action="#{uyegirisbean.bigileriOnayla()}"/>
+                </h:panelGrid>
+                <h:messages /> 
+                
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
