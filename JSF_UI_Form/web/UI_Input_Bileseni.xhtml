@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UI Kullanıcıdan Input</title>
+    </h:head>    
+    <h:body>
+        <f:view>
+            <h:form id="form4">
+                -Metin yaz-
+                <h:inputText id="input_user_UI_bilesen_0" value="Kullanıcı veri girişi" />
+                <br/><!-- comment -->           
+                -Şifre-
+                <h:inputSecret id="input_user_passworld_UI_bilesen_0" redisplay="false" value="1234"/>                
+                <br/>
+                -Gizli Metin Veri Aktarımı-
+                <h:inputHidden id="gizli_metin_0" value="aktarılıcak veri"/>
+                <br/>
+                -İnput Area-
+                <h:inputTextarea id="input_text_area_veri_al_0" value="nice bro" rows="40" cols="70"/>
+            </h:form>
+        </f:view>        
+    </h:body>
+</html>
+

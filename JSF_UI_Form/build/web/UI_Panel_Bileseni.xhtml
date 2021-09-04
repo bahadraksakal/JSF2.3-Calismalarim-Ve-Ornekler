@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UI Panel</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h3>UI PANEL BİLEŞENLERİ : Panel-Grid | PanelGroup</h3> <hr/>
+            <h:form id="form10">
+                <h:outputText value="PanelGrid"/> <br/>
+                <h:panelGrid id="panelgrid0" columns="3" footerClass="subtitle" border="1">
+                    <f:facet name="header"> <!-- name kelimesi  sanki type mış gibi bir anahtar kelime rasgele isim verilmez -->
+                        <h:outputText value="Tablo Numaraları"/>
+                    </f:facet>
+                    <h:outputText value="1"/>
+                    <h:outputText value="2"/>
+                    <h:outputText value="3"/>
+                    <h:outputText value="4"/>
+                    <h:outputText value="5"/>
+                    <f:facet name="footer"> <!-- alt bilgi = footer -->
+                        <h:panelGrid>
+                            <h:outputText value="Bahadır Aksakal JSF öğreniyor"/>
+                            <br/><!-- comment -->
+                            <h:outputText value="Başarılı"/>
+                        </h:panelGrid>
+                    </f:facet>
+                </h:panelGrid>
+                <hr/><!-- comment -->
+                <h:panelGrid id="panelGrid1" columns="1" border="0">
+                    <f:facet name="header">
+                        <h:outputText value="Kullanıcı Girişi"/>
+                    </f:facet>
+                    <h:outputLabel id="opl_2" for="ad_input" value="Kullanıcı adı"/>
+                    <h:inputText id="ad_input" value=""/>
+                    
+                    <h:outputLabel id="opl_3" for="sifre_input" value="Şifre"/>
+                    <h:inputSecret id="sifre_input" redisplay="false" value="" />
+                    
+                    <f:facet name="footer">
+                        <h:panelGroup id="panelGroup" style="display: block ; text-align: right">
+                            <h:selectBooleanCheckbox id="booleancheck_11" value=""/> 
+                            <h:outputText value="beni hatırla"/>
+                            <h:commandButton id="index_go_button1" value="giriş" action="index" />
+                        </h:panelGroup>
+                    </f:facet>                        
+                </h:panelGrid>         
+            </h:form>
+        </f:view>            
+    </h:body>
+</html>
+

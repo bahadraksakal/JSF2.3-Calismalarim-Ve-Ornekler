@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UI_Message Bileşenleri</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h3>UI MESSAGE BİLEŞENLERİ</h3>
+            <h:form id="form6">
+                <h:outputLabel id="outputlabel_1" for="adi_soyadi_1" value="Ad Soyad : "/>
+                <h:inputText id="adi_soyadi_1" required="true" /> <!-- requried buraya bilgi girilmesi mecburi -->
+                <h:commandButton id="kaydet_buton_0" value="kaydet" /> <!-- id ? -->
+                <br/><!-- comment -->
+                
+                <h:message id="message_0" for="adi_soyadi_1" style="color:red" />
+                
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

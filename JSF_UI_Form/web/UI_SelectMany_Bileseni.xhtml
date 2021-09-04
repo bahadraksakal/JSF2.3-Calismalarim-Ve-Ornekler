@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>UI SELECT MANY</title>
+    </h:head>
+    <h:body> <!-- NOT: FARKLI SAYFALARDA AYNI İD KULLANILABİLİR -->
+        <f:view >
+            <h:form id="form8">
+                Deneyimler SelectManyCheckBox <br/> <!-- Tavsiye: her şeyi jsf companantleri ile yazın normal yazmayın -->
+                <h:outputText value="deneyimli olduğunuz alanları işaretleyiniz"/> <hr/>
+                <h:selectManyCheckbox id="deneyimler0" layout="pageDirection" >
+                    <f:selectItem id="secim0" itemValue="0" itemLabel="JSP"/> <!-- diyelimki kullanıcı JSP seçti  secim0 nesnesi üzerinden 0 değeri yollanıyor itemvalue. -->
+                    <f:selectItem id="secim1" itemValue="1" itemLabel="JSF"/>
+                    <f:selectItem id="secim2" itemValue="2" itemLabel="Spring"/>
+                    <f:selectItem id="secim3" itemValue="3" itemLabel="Hibernate"/>
+                    <f:selectItem id="secim4" itemValue="4" itemLabel="PrimeFaces"/>
+                </h:selectManyCheckbox>
+                <hr/><!-- comment -->
+                Deneyimler SelectManyMenu <br/>
+                <h:outputText value="deneyimli olduğunuz alanları seçiniz"/> <hr/>                
+                <h:selectManyMenu id="deneyimler1">
+                    <f:selectItem id="deneyim0" itemValue="0" itemLabel="JSP"/>
+                    <f:selectItem id="deneyim1" itemValue="1" itemLabel="JSF"/>
+                    <f:selectItem id="deneyim2" itemValue="2" itemLabel="Spring"/>
+                    <f:selectItem id="deneyim3" itemValue="3" itemLabel="Hibernate"/>
+                    <f:selectItem id="deneyim4" itemValue="4" itemLabel="PrimeFaces"/>
+                </h:selectManyMenu >
+                <hr/><!-- comment -->
+                Deneyimler ManyListBox <br/>
+                <h:outputText value="tecrübeli olduğunuz alanları seçiniz"/> <hr/>
+                <h:selectManyListbox id="deneyimler2">
+                    <f:selectItem id="tecrube0" itemValue="0" itemLabel="JSP"/>
+                    <f:selectItem id="tecrube1" itemValue="1" itemLabel="JSF"/>
+                    <f:selectItem id="tecrube2" itemValue="2" itemLabel="Spring"/>
+                    <f:selectItem id="tecrube3" itemValue="3" itemLabel="Hibernate"/>
+                    <f:selectItem id="tecrube4" itemValue="4" itemLabel="PrimeFaces"/>
+                </h:selectManyListbox>
+                <hr/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

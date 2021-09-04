@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<!--      xmlns:x="http://mojarra.dev.java.net/mojarra_ext"  // ile ek kütüphaneler taglib  vb.. eklenebilir-->
+    
+    <h:head>
+        <title>UI Bileşeni</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="form1">
+            <h:commandButton id="UI2dugmesi" value="UI_2_git" action="UI_2.xhtml"></h:commandButton>  <!-- command butonu bir fpprm içinde çalışır boşa koyarsak çalışmaz -->
+            <h:commandButton id="UI_graphich_dugmesi" value="UI_grahich_git" action="UI_graphich.xhtml"/>
+            <h:commandLink id="UI2_Erisim_Linki" action="UI_2.xhtml">
+                <h:outputText value="bağlantıya tıkla"/>
+            </h:commandLink>
+            <h:commandButton id="UI_Input_dugmesi" value="UI_Input_Bileseni" action="UI_Input_Bileseni.xhtml"/> 
+                  <!-- kısa yazımı içeri bişey yazılmayacaksa etiket önce kapatılablilir -->
+            <!-- <link rel="stylesheet" href="komutu verdiğimizde linki girmez isek hata alırız. null pointer"/> -->
+            <h:commandButton id="UI_Output_dugmesi" value="UI_Output_Bileseni" action="UI_Output_Bilesenleri.xhtml"/> 
+            <h:commandButton id="UI_OMessage_dugmesi" value="UI_Message_Bileseni" action="UI_Message_Bileseni.xhtml"/> 
+            <h:commandButton id="UI_Select_boolean_box" value="Select Boolean box" action="UI_SelectBoolean_Bileseni.xhtml"/>
+            <h:commandButton id="UI_Select_Many_box" value="Select Many box" action="UI_SelectMany_Bileseni.xhtml"/>
+            <h:commandButton id="UI_Select_One_box" value="Select One box" action="UI_SelectOne_Bileseni.xhtml"/>
+            <h:commandButton id="UI_Panel_box" value="Panel box" action="UI_Panel_Bileseni.xhtml"/>
+        </h:form> 
+              
+    </h:body>
+</html>
+
