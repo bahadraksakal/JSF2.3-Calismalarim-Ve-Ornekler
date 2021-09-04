@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>DillerPage</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form id="form_1">
+                <f:loadBundle id="ldb_1" basename="com.resources.selamlama_#{dilBean.yeniYerelKodDegeri}" var="msj"/>
+                <h:outputText id="opt_3" value="#{msj['selamlama.jsf']}" />            
+
+                <h:panelGrid  id="pnl_grid_0" columns="2">
+
+                    <h:outputText id="opt_4" value="#{msj['lisan.jsf']}" /> 
+
+                    <h:selectOneMenu    value="#{dilBean.yerelKod}" 
+                                        onchange="submit()"
+                                        valueChangeListener="#{dilBean.ulkeninYerelKoduDegisti}">
+
+                        <f:selectItems id="sli_0" value="#{dilBean.ulkerinHaritasi}" />  <!-- items  çoğul olmalı çünki map -->
+                               
+                    </h:selectOneMenu>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+
