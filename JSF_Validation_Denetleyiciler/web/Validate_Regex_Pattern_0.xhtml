@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Validate_Regex_Pattern_0</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <!-- HATA MESAJI -->              
+                <h:panelGrid columns="2" cellpadding="20" cellspacing="20" border="3">
+                    <!-- hücrelerdeki boşlukları yukarıdaki attiributelerle ayarlayabiliriz. -->
+
+                    <h:outputLabel value="E-Posta : " />
+                    <h:inputText id="eposta" value="#{yb.eposta}" required="true" size="45"
+                                 validatorMessage="Geçersiz bir e-posta girildi." >
+                        <!-- validator messsage kullanımı! -->
+                        <!-- BIZIM BELIRLEDIGIMIZ DENETIM FORMATI -->
+                        <f:validateRegex 
+                               pattern="^(([A-Za-z0-9]+_+)
+                               |([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)
+                               |([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)
+                               |(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$"/>   
+                        <!-- pattern demek kalıp demek önceki konularda url denetimini isValid ile uğraşlı bir şekilde
+                        yapmıştık buradaki kalıp yanii 'patternde aynı işi görüyor' bunları netten bulabilirsiniz.-->                        
+                    </h:inputText>
+                    
+                       <h:outputLabel value="E-Posta_2 : " for="eposta_2" />
+
+                      <h:inputText id="eposta_2" value="#{yb.eposta_2}" 
+                                size="40" required="true" 
+                                label="Geçersiz bir e-posta girildi.">
+                        <!-- BIZIM BELIRLEDIGIMIZ DENETIM FORMATI -->                    
+                        <!-- BIZIM BELIRLEDIGIMIZ DENETIM SINIFI -->    
+                         <f:validator validatorId="EpostaDenetlemeSinifi" />
+                    </h:inputText>
+                    <h:message for="eposta_2" style="color:red" />
+                    <h:commandButton value="Gönder" action="Validate_Regex_Pattern_1" />                    
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
