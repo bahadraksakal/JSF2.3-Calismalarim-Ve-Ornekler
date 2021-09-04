@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>OutPutText_1</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1>Gelen değerler</h1>
+
+                Adı : <h:outputText value="#{optb_1.adi}" /><br/>
+                Soyadı : <h:outputText value="#{optb_1.soyadi}" /><br/>
+
+                Adı Soyadı : 
+                <h:outputText value="#{optb_1.adi}  #{optb_1.soyadi}" />
+
+                <ol>
+                    <li>#{optb_1.mesaj}</li>
+                    <li><h:outputText value="#{optb_1.mesaj}" /></li>
+                </ol>  
+                <hr/>
+
+                <ol>
+                    <li><h:outputText value="#{optb_1.htmlInputCheckboxKutusu}" /></li>
+                    <li><h:outputText value="#{optb_1.htmlInputCheckboxKutusu}"  escape="false" /></li>
+                    <!-- escape=false ==  şu demek bu bir string değil yazıya kod muamelesi yap -->
+                </ol> 
+                <hr/>
+
+                <ol> 
+                    <li><h:outputText value="#{optb_1.htmlInputRadioKutusu}" /></li>
+                    <li><h:outputText value="#{optb_1.htmlInputRadioKutusu}"  escape="false" /></li>
+                </ol> 
+                <hr/>
+
+                <ol>
+                    <li><h:outputText value="#{optb_1.htmlInputYaziKutusu}" /></li>
+                    <li><h:outputText value="#{optb_1.htmlInputYaziKutusu}" escape="false" /></li>
+                </ol>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

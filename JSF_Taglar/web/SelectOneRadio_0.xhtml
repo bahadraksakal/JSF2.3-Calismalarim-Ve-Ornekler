@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>           
+            <h:form id="form_4">
+                 <title >JSF Html Tag h:selectOneRadio</title>
+                 1. h:selectOneRadio içindekileri kendimiz elimiz ile doldurduk. 
+                 <h:selectOneRadio value="#{yb_1.programlamadili}">
+                    <f:selectItem itemValue="Java Platform, Standard Edition" itemLabel="Java SE"/>
+                    <f:selectItem itemValue="JavaServer Pages" itemLabel="JSP" />
+                    <f:selectItem itemValue="JavaServer Faces" itemLabel="JSF" />
+                    <f:selectItem itemValue="Apple" itemLabel="iPhone ve iPad Programlama" />
+                    <f:selectItem itemValue="Android" itemLabel="Android Uygulama Geliştirme" />
+                </h:selectOneRadio>
+                <br />
+                
+                2. h:selectOneRadio içini Map Haritalama ile doldurduk.
+                <h:selectOneRadio value="#{yb_1.ders}">
+                    <f:selectItems value="#{yb_1.dersAdlariniAl()}" />
+                </h:selectOneRadio>
+                <br />
+
+                3. h:selectOneRadio içini bir sınıf ve nesne ile doldurduk.
+                <h:selectOneRadio value="#{yb_1.egitmen}">
+                    <f:selectItems value="#{yb_1.egitmenBilgileriniAl}" 
+                                   var="e"
+                                   itemLabel="#{e.egitmenAdi}" 
+                                   itemValue="#{e.egitmenNo}" />
+                </h:selectOneRadio>
+                <!-- birr sınıf ile nesne doldururkan  sınıfın adı üzerin bir dizeye daha sonra o dizinin 
+                tutuğu elemana erişiriz. bu  eleman bizim eğitmen class ımız ve iki adet string bulunuyor içinde
+                ana class üzerinden eğitmen dizisini aldık bu dizinin her bir elemanında eğitmen nesnesi var
+                eğitmen nesnesini içinde iki adet veri var isim ve id  biz bu isim ve id lere  erişileceğini söyledik
+                dizinin her elemanına tek tek bakıp verileri çekme işini ise f:selectItems komuyu taptı-->
+                <br />
+
+                <h:commandButton value="Temizle" type="reset" />
+                <h:commandButton value="Gönder" action="SelectOneRadio_1" />
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

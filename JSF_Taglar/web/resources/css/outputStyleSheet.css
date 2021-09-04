@@ -1,0 +1,19 @@
+
+.kirmizi{
+    color:red;	
+}
+
+.mavi{
+    color:blue;	
+}
+
+.yesil{
+    color:seagreen;	
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 36px;
+}
+/*default olarak tüm yazılar divdir*/
+div{ 
+    font-weight: bolder;
+}
+/*eğer sınıflarımız başına # atarsak bu özel id li bir eleman için kullanılacağı anlamına gelir*/

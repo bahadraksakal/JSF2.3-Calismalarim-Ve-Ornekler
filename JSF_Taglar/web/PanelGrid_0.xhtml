@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>PanelGrid_0</title>
+    </h:head>
+    <h:body>
+        <h1>JSF Html Tag h:panelGrid</h1>
+
+        <h:outputStylesheet library="css" name="outputStyleSheet.css" />
+
+       	<h:form>
+
+            <h:panelGrid columns="2">
+                
+                <h:graphicImage library="images" name="uyeol.png" />
+                <h1>Bilgi Girişi</h1>
+            </h:panelGrid>
+
+            <h:panelGrid columns="3">
+
+                <h:outputLabel value="ADI : "/>  
+                <h:inputText id="adiID" 
+                             value="#{pgb_1.adi}" 
+                             size="15" required="true" label="adi" >
+                </h:inputText>
+                <h:message for="adiID" style="color:red" />
+
+                <h:outputLabel>SOYADI : </h:outputLabel> 
+                <h:inputText id="soyadiID" 
+                             value="#{pgb_1.soyadi}" 
+                             size="15" required="true" label="soyadi" >
+                </h:inputText>
+                <h:message for="soyadiID" styleClass="kirmizi" /> 
+                <!-- hata alırsak anlamak için -->
+                <h:outputLabel>NUMARASI : </h:outputLabel> 
+                <h:inputText id="numarasiID" 
+                             value="#{pgb_1.numarasi}" 
+                             size="15" required="true" label="numarasi" >
+                    <f:convertNumber /> <!-- bu alana sadece sayı girilebilir -->
+                </h:inputText>
+                <h:message for="numarasiID" style="color:#ff3300" />
+
+            </h:panelGrid>
+
+            <h:commandButton value="Temizle" type="reset" />
+            <h:commandButton value="Gönder" action="PanelGrid_1" />
+
+        </h:form>
+    </h:body>
+</html>
+

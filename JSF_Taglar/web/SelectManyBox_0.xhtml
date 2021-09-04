@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SelectManyBox_0</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>     
+                <h:panelGrid id="plg_0" columns="1" border="3" style="border-bottom-color: darkorange">
+                    <f:facet name="header">
+                        <h:outputText id="opt_9" value="1.  - (BASİC) Tek Bir Tane Checkbox Boolean" style="font-size: 20px ; color: red"/>
+                    </f:facet>              
+                    <h:outputText style="background-color: forestgreen"/>
+                    <h:graphicImage value="resources/images/onay.png" id="ghi_0" style="border-bottom-color: darkviolet"  />              
+                   <h:outputText id="opt_0" value="Kod yazmayı seviyor musunuz?"/>
+                   <h:selectBooleanCheckbox id="sbc_0" value="#{ob.seviyormu}" />
+                   <h:outputText style="background-color: forestgreen"/>                   
+                       
+                   <h:outputText id="opt_1" title="center" 
+                                 value="2. - (EXPERT) Çoklu Checkbox Kutuları" />               
+                   
+                   <h:outputText id="opt_2" value="a- h:selectManyCheckbox içerisini elle kendimiz doldurduk." style="color: deeppink"/>                  
+                   <h:graphicImage value="resources/images/android.png" id="ghi_1"/>
+                   <h:outputText id="opt_8" value="Android Severler" style="color: darkgreen"/>          
+                   <h:selectManyCheckbox id="sbc_1" value="#{asb.androidsevenler}">
+                       <f:selectItem itemValue="Ebubekir Yılmaz" itemLabel="Ebubekir Yılmaz" />
+                       <f:selectItem itemValue="Eren Satı" itemLabel="Eren Satı" />
+                       <f:selectItem itemValue="Recai Aydoğdu" itemLabel="Recai Aydoğdu" />
+                       <f:selectItem itemValue="Mustafa Baba" itemLabel="Mustafa Baba" />
+                       <f:selectItem itemValue="Nevzat Akkaya" itemLabel="Nevzat Akkaya" />
+                       <f:selectItem itemValue="Ramin Orucov" itemLabel="Ramin Orucov" /> 
+                   </h:selectManyCheckbox>
+                   
+                   <h:outputText style="background-color: forestgreen"/>
+                   <h:outputText id="opt_10" value="b- h:selectManyCheckbox içerisini dizi ile doldurduk." style="color: deeppink"/>                               
+                   <h:graphicImage value="resources/images/iphone.png" id="ghi_2"/>
+                   <h:outputText id="opt_4" value="iPhone Severler" style="color: darkgreen"/>                  
+                   <h:selectManyCheckbox id="sbc_2" value="#{ip.iphoneSeverler}">
+                       <f:selectItems value="#{ip.iphoneSeverler}" />  <!--burada verdiğimiz şey bir dizi referansı kendi oto yerleştiricek -->
+                   </h:selectManyCheckbox>                
+                    
+                   <h:outputText id="opt_3" value="c- h:selectManyCheckbox içerisini Map(Harita) ile doldurduk." style="color: deeppink"/>                     
+                   <h:graphicImage value="resources/images/java.png" id="ghi_3"/>
+                   <h:outputText id="opt_5" value="Java GUI Severler" style="color: darkgreen"/>                      
+                   <h:selectManyCheckbox id="sbc_3" value="#{jgs.javaGuiSeverler}"> <!-- değerleri buraya set edilcek --> 
+                       <f:selectItems value="#{jgs.javaGuiSeverlerAdSoyad}"  />  <!--değerler burdan get edilecek  -->
+<!--                        static metotları jsf görmüyor. -->
+                   </h:selectManyCheckbox>
+                   
+                   <h:outputText style="background-color: forestgreen"/>
+                   <h:outputText id="opt_7" value="d- h:selectManyCheckbox içerisini bir sınıfın tipindeki bir dizi ile doldurduk." style="color: deeppink"/>                      
+                   <h:graphicImage value="resources/images/jsfweb.png" id="ghi_4"/>
+                   <h:outputText id="opt_6" value="JSF Severler" style="color: darkgreen"/>                    
+                   <h:selectManyCheckbox id="sbc_4" value="#{jS.jsfSeverIsim}">
+                       <f:selectItems value="#{jS.jsfSeverIsim}"  /> 
+                   </h:selectManyCheckbox>
+                    
+                   <h:outputText style="background-color: forestgreen"/>
+                    <f:facet name="footer">
+                        <h:commandButton id="cmb_2" value="Temizle" type="reset" />
+                        <h:commandButton id="cmb_3" value="Gönder" action="SelectManyBox_1" />
+                    </f:facet>
+                </h:panelGrid>
+           </h:form>
+
+        </f:view>
+    </h:body>
+</html>
+

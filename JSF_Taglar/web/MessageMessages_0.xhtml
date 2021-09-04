@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>MessageMessages_0</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h1>JSF Html Tag h:message h:messages</h1>
+
+            <h:outputStylesheet library="css" name="outputStyleSheet.css" />
+
+            <h:form>
+
+                <h:messages style="color:green; margin:8px;" />	
+                <br />
+
+
+                <h:panelGrid columns="2">
+                    <h1>Bilgi Girişi</h1>
+                    <h:graphicImage library="images" 
+                                    name="uyeol.png" />
+                </h:panelGrid>
+
+                <h:panelGrid columns="3">
+
+                    <h:outputLabel>ADI : </h:outputLabel>  
+                    <h:inputText id="adiID" 
+                                 value="#{pgb_1.adi}" 
+                                 size="15" required="true" label="adi" >
+
+                        <f:validateLength minimum="2" maximum="30" /> <!-- karakteri sayar -->
+
+                    </h:inputText>
+                    <h:message for="adiID" style="color:red" />
+                    <!-- messageleri for ile bir componente bağlarız -->
+
+
+                    <h:outputLabel>SOYADI : </h:outputLabel> 
+                    <h:inputText id="soyadiID" 
+                                 value="#{pgb_1.soyadi}" 
+                                 size="15" required="false" label="soyadi" >
+
+                        <f:validateLength minimum="2" maximum="30" /> <!-- karakter olarak değerlendirir -->
+                         <!-- en az 2  en çok 30 karakter girilebilir -->
+
+                    </h:inputText>
+                    <h:message for="soyadiID" styleClass="mavi" />
+
+
+                    <h:outputLabel>NUMARASI : </h:outputLabel> 
+                    <h:inputText id="numarasiID" 
+                                 value="#{pgb_1.numarasi}" 
+                                 size="15" required="true" label="numarasi" >
+
+                        <f:validateLongRange for="numarasiID" 
+                                             minimum="1000" maximum="2000" /> <!-- sayısal olarak değerlendirir -->
+
+                        <f:convertNumber /> <!-- sadece numara -->
+                    </h:inputText>
+                    <h:message for="numarasiID" style="color:#ff3300" />
+
+                </h:panelGrid>
+
+                <h:commandButton value="Temizle" type="reset" />
+                <h:commandButton value="Gönder" action="MessageMessages_1" />
+
+                <br />
+                <h:messages   styleClass="mavi" />	
+
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
