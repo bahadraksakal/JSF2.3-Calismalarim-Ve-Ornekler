@@ -1,2 +1,2 @@
 # JSF_2.3_Konular_Ve_Ornekler
-Bu repoda JSF-PRİMEFACES-CDI konularında uygulamaları örnekler ve notlar bulunmaktadır.
+Bu repoda JSF-PRİMEFACES-CDI konularının; uygulamaları, örnekleri ve notları bulunmaktadır.
